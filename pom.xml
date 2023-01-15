@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gabrielmendes</groupId>
-    <artifactId>jdbc-completer</artifactId>
+    <artifactId>jdbc-executor</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
