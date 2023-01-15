@@ -1,5 +1,7 @@
 package db.repository;
 
+import db.repository.utils.StringQueryUtils;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -114,16 +116,16 @@ public class NamedPreparedStatement {
 
                     isDoubleQuote = true;
 
-                } else if (Objects.equals(c, ':') && i + 1 < queryChars.length && !Objects.equals(' ', queryChars[i + 1])) {
+                } else if (Objects.equals(c, ':') && i + 1 < queryChars.length && !StringQueryUtils.isParamEnd(queryChars[i + 1])) {
 
                     int j = i + 1;
-                    while (j < queryChars.length && !Objects.equals(' ', queryChars[j])) j++;
+                    while (j < queryChars.length && !StringQueryUtils.isParamEnd(queryChars[j])) j++;
 
                     paramIndexList.add(new ParamIndex(index, dsQuery.substring(i + 1, j)));
 
                     index++;
                     c = '?';
-                    i = j;
+                    i = j - 1;
 
                 }
 
