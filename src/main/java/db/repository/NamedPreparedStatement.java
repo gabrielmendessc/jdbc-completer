@@ -99,6 +99,7 @@ public class NamedPreparedStatement {
 
                     paramIndexList.add(new ParamIndex(index, dsQuery.substring(i + 1, j)));
 
+                    index++;
                     c = '?';
                     i = j;
 
