@@ -69,7 +69,7 @@ public class RepositoryTemplate {
             Connection conn = DatabaseConnection.getConnection();
             NamedPreparedStatement namedPstmt = new NamedPreparedStatement(conn, dsQuery);
 
-            pstmt = namedPstmt.executeQuery(params);
+            pstmt = namedPstmt.executeQueryForResultSet(params);
             rs = pstmt.getResultSet();
 
             return rs.next() ? resultSetMapper.map(rs, 1) : null;
@@ -96,7 +96,7 @@ public class RepositoryTemplate {
            Connection conn = DatabaseConnection.getConnection();
            NamedPreparedStatement namedPstmt = new NamedPreparedStatement(conn, dsQuery);
 
-           pstmt = namedPstmt.executeQuery(params);
+           pstmt = namedPstmt.executeQueryForResultSet(params);
            rs = pstmt.getResultSet();
 
            List<T> listT = new ArrayList<>();

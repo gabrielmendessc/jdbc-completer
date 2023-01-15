@@ -23,13 +23,35 @@ public class NamedPreparedStatement {
     public PreparedStatement executeQuery() throws SQLException {
 
         PreparedStatement pstmt = conn.prepareStatement(dsQuery);
-        pstmt.executeQuery();
+        pstmt.execute();
 
         return pstmt;
 
     }
 
     public PreparedStatement executeQuery(Map<String, Object> params) throws SQLException {
+
+        List<ParamIndex> paramIndexList = setParamsInSQL(params);
+        PreparedStatement pstmt = conn.prepareStatement(dsQuery);
+
+        setParamsInStatement(pstmt, params, paramIndexList);
+
+        pstmt.execute();
+
+        return pstmt;
+
+    }
+
+    public PreparedStatement executeQueryForResultSet() throws SQLException {
+
+        PreparedStatement pstmt = conn.prepareStatement(dsQuery);
+        pstmt.executeQuery();
+
+        return pstmt;
+
+    }
+
+    public PreparedStatement executeQueryForResultSet(Map<String, Object> params) throws SQLException {
 
         List<ParamIndex> paramIndexList = setParamsInSQL(params);
         PreparedStatement pstmt = conn.prepareStatement(dsQuery);
