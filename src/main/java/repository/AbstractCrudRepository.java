@@ -2,7 +2,7 @@ package repository;
 
 import java.util.List;
 
-public class AbstractCrudRepository<A,B> implements CrudRepository<A,B> {
+public abstract class AbstractCrudRepository<A,B> implements CrudRepository<A,B> {
 
     private RepositoryTemplate repositoryTemplate = new RepositoryTemplate();
 
