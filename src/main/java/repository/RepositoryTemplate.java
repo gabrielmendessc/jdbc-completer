@@ -1,4 +1,4 @@
-package db.repository;
+package repository;
 
 import db.DatabaseConnection;
 import db.exception.DatabaseException;

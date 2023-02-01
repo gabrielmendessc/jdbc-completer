@@ -1,6 +1,6 @@
-package db.repository;
+package repository;
 
-import db.repository.utils.StringQueryUtils;
+import repository.utils.StringQueryUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

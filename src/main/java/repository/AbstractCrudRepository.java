@@ -1,4 +1,4 @@
-package db.repository;
+package repository;
 
 import java.util.List;
 
@@ -15,33 +15,35 @@ public class AbstractCrudRepository<A,B> implements CrudRepository<A,B> {
     @Override
     public A insert(A domain) {
 
-        return null;
+        throw new UnsupportedOperationException("Operation not implemented");
 
     }
 
     @Override
     public A update(A domain, B id) {
 
-        return null;
+        throw new UnsupportedOperationException("Operation not implemented");
 
     }
 
     @Override
     public void delete(B id) {
 
+        throw new UnsupportedOperationException("Operation not implemented");
+
     }
 
     @Override
     public List<A> findAll() {
 
-        return null;
+        throw new UnsupportedOperationException("Operation not implemented");
 
     }
 
     @Override
     public A findById(B id) {
 
-        return null;
+        throw new UnsupportedOperationException("Operation not implemented");
 
     }
 

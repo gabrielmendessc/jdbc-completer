@@ -1,4 +1,4 @@
-package db.repository.utils;
+package repository.utils;
 
 import java.util.Objects;
 
